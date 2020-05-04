@@ -1,12 +1,15 @@
+// Posted from EduTools plugin
 import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int cups = scanner.nextInt();
-        boolean weekend = scanner.nextBoolean();
+        int peanuts = scanner.nextInt();
+        boolean isWeekend = scanner.nextBoolean();
+        boolean goodForNormalDays = peanuts >= 10 && peanuts <= 20 && !isWeekend;
+        boolean goodForWeekend = peanuts >= 15 && peanuts <= 25 && isWeekend;
 
-        System.out.println((!weekend && cups >= 10 && cups <= 20) || (weekend && cups >=15 && cups <= 25));
+        System.out.println(goodForNormalDays || goodForWeekend);
     }
 }
